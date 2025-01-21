@@ -1,7 +1,40 @@
 site_name: Linger's site
 nav:
   - Home: index.md
-  - About: about.md
+
 site_url: https://mydomain.org/mysite
+# [UI]
+# [top]
 theme:
   name: material
+  palette:
+
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: 随系统改变模式
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      primary: pink
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: 浅色外观
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: 深色外观
+
+  font: 
+    text: Roboto Slab
+
+
+         
