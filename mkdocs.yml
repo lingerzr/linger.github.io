@@ -1,6 +1,7 @@
 site_name: Linger's site
 nav:
   - Home: index.md
+  - 大学物理: 大学物理笔记.md
 
 site_url: https://mydomain.org/mysite
 # [UI]
@@ -35,6 +36,90 @@ theme:
 
   font: 
     text: Roboto Slab
+    # 设置字体
+  
+  logo: sitelogo.png
+  #sitelogo
+  favicon: sitelogo.png
+  #网页logo
+
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.prefetch
+    # instant loading && instant prefetching
+
+extra:
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+    actons: 
+      - accept
+      - reject
+      - manage
+    # cookie同意
+
+# [Extensions]
+plugins:
+  # [搜索功能]
+  # https://squidfunk.github.io/mkdocs-material/plugins/search/
+  # 之前中文搜索是 Insider 的功能（https://squidfunk.github.io/mkdocs-material/blog/2022/chinese-search-support/），现在好像已经是默认功能了，
+  - search:
+      lang:
+        - zh
+        - en
+        - ja
+  # [给单篇文章添加标签]
+  # https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/
+  # https://squidfunk.github.io/mkdocs-material/plugins/tags/#meta.tags
+  - tags
+
+plugins:
+  - search
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - def_list
+  # - mdx_truly_sane_lists
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight: # 代码块高亮
+      auto_title: false # 显示编程语言名称
+extra_javascript:
+  - js/katex.js
+  - js/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+extra_css:
+  - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
+  - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
+  - stylesheets/extra.css
+  - https://unpkg.com/katex@0/dist/katex.min.css
+  # [数学公式支持]
+  # https://squidfunk.github.io/mkdocs-material/reference/math/#katex
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+  # [自定义 css]
+  # 不使用底部的翻页
+  - mkdocs/css/no-footer.css
+  # 无序列表符号自定义
+  - mkdocs/css/unordered-list-symbols.css
+
 
 
          
