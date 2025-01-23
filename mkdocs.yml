@@ -79,6 +79,7 @@ plugins:
         - ja
   - git-revision-date-localized:
       enable_creation_date: true
+  - statistics
 
 extra:
   consent:
