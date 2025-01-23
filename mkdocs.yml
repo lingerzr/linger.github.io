@@ -1,7 +1,12 @@
 site_name: Linger's site
 nav:
   - Home: index.md
-  - 大学物理: 大学物理笔记.md
+  - Math: 
+    - Math/index.md
+    - Math/复变函数与积分变换.md
+  - Physics:
+    - Physics/index.md
+    - Physics/大学物理笔记.md
 
 site_url: https://mydomain.org/mysite
 # [UI]
@@ -30,7 +35,7 @@ theme:
       scheme: slate
       primary: indigo
       accent: deep purple
-      toggle:
+      toggle: 
         icon: material/brightness-4
         name: 深色外观
 
