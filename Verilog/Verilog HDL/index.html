@@ -1,0 +1,2122 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mydomain.org/mysite/Verilog/Verilog%20HDL/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+      
+      <link rel="icon" href="../../sitelogo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
+    
+    
+      
+        <title>Verilog HDL - Linger's site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto Slab";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#verilog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Linger&#39;s site" class="md-header__button md-logo" aria-label="Linger's site" data-md-component="logo">
+      
+  <img src="../../sitelogo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linger's site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Verilog HDL
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="随系统改变模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="随系统改变模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="deep-orange"  aria-label="浅色外观"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="浅色外观" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="深色外观"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="深色外观" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lingerzr/linger.github.io.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    linger.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Math/" class="md-tabs__link">
+          
+  
+    
+  
+  Math
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Physics/" class="md-tabs__link">
+          
+  
+    
+  
+  Physics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  Verilog
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Linger&#39;s site" class="md-nav__button md-logo" aria-label="Linger's site" data-md-component="logo">
+      
+  <img src="../../sitelogo.png" alt="logo">
+
+    </a>
+    Linger's site
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lingerzr/linger.github.io.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    linger.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Math/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Math
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Math
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E4%B8%8E%E7%A7%AF%E5%88%86%E5%8F%98%E6%8D%A2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    复变函数与积分变换
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Physics/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Physics
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Physics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Physics/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    大学物理笔记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Verilog
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Verilog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Verilog HDL
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Verilog HDL
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#verilog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verilog基本结构
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verilog_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verilog基础知识
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verilog基础知识">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      词法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="词法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      间隔符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      注释符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      标识符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      关键字
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      常量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      整数常量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      实数常量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="实数常量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      十进制计数法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      科学计数法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      字符串常量
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据类型和变量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据类型和变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wire" class="md-nav__link">
+    <span class="md-ellipsis">
+      wire型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reg" class="md-nav__link">
+    <span class="md-ellipsis">
+      reg型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储型变量
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      模块端口类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      运算符与优先级
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="运算符与优先级">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      算数运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      关系运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      等式运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      逻辑运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      按位逻辑运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      缩位运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      位移运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      位拼接运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      运算优先级
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verilog-hdl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verilog HDL的描述语句
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verilog HDL的描述语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据流描述语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      行为描述语句
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="行为描述语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      过程结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="过程结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialalways" class="md-nav__link">
+    <span class="md-ellipsis">
+      initial、always语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beginend" class="md-nav__link">
+    <span class="md-ellipsis">
+      串行语句块(begin···end语句组)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forkjoin" class="md-nav__link">
+    <span class="md-ellipsis">
+      并行语句块(fork···join语句组)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      过程赋值语句
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="过程赋值语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      阻塞性过程赋值 “=”
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      非阻塞性过程赋值 “&lt;=”
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件分支语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      循环控制语句
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verilog_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verilog描述风格及层次化设计
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verilog描述风格及层次化设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据流型描述
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xing" class="md-nav__link">
+    <span class="md-ellipsis">
+      行为xing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#verilog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verilog基本结构
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verilog_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verilog基础知识
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verilog基础知识">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      词法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="词法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      间隔符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      注释符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      标识符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      关键字
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      常量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      整数常量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      实数常量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="实数常量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      十进制计数法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      科学计数法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      字符串常量
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据类型和变量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据类型和变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wire" class="md-nav__link">
+    <span class="md-ellipsis">
+      wire型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reg" class="md-nav__link">
+    <span class="md-ellipsis">
+      reg型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储型变量
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      模块端口类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      运算符与优先级
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="运算符与优先级">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      算数运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      关系运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      等式运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      逻辑运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      按位逻辑运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      缩位运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      位移运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      位拼接运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      运算优先级
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verilog-hdl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verilog HDL的描述语句
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verilog HDL的描述语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据流描述语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      行为描述语句
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="行为描述语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      过程结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="过程结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialalways" class="md-nav__link">
+    <span class="md-ellipsis">
+      initial、always语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beginend" class="md-nav__link">
+    <span class="md-ellipsis">
+      串行语句块(begin···end语句组)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forkjoin" class="md-nav__link">
+    <span class="md-ellipsis">
+      并行语句块(fork···join语句组)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      过程赋值语句
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="过程赋值语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      阻塞性过程赋值 “=”
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      非阻塞性过程赋值 “&lt;=”
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件分支语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      循环控制语句
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verilog_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verilog描述风格及层次化设计
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verilog描述风格及层次化设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据流型描述
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xing" class="md-nav__link">
+    <span class="md-ellipsis">
+      行为xing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Verilog HDL</h1>
+
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2256 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 8 分钟</p>
+</div>
+<h2 id="verilog">Verilog基本结构<a class="headerlink" href="#verilog" title="Permanent link">&para;</a></h2>
+<p>模块结构基本语法如下
+<div class="highlight"><pre><span></span><code>module &lt;模块名&gt;(&lt;端口列表&gt;)
+    参数定义(可选)
+    端口说明(input, output, inout)
+    数据类型说明
+    持续赋值语句(assign)
+    过程块(always initial)-行为描述语句
+    底层模块实例-调用底层模块
+    任务和函数
+    演示说明模块
+endmodule
+</code></pre></div></p>
+<h2 id="verilog_1">Verilog基础知识<a class="headerlink" href="#verilog_1" title="Permanent link">&para;</a></h2>
+<h3 id="_1">词法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h4 id="_2">间隔符<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>空格、制表符、换行以及换页符</p>
+<h4 id="_3">注释符<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>单行注释:以&quot;//&quot;起始，以新的一行作为结束
+多行注释:以&quot;/*&quot;起始，以&quot;*/&quot;结束
+</code></pre></div>
+<h4 id="_4">标识符<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>标识符可以是==字母、数字、符号"<code>$</code>和下划线"<code>_</code>==的任意组合序列，但它必须以字母(大小写)或下划线开头，不能是数字或<code>$</code>符开头。</p>
+<h4 id="_5">关键字<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>保留字，它是Verilog HDL的专用字，所有关键字都是用小写形式，不能将关键字用作标识符。
+![[微信图片_20250223223957.jpg]]</p>
+<h3 id="_6">常量<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>Verilog HDL有下列四种基本的值
+1. 0：逻辑0或“假”。
+2. 1：逻辑1或“真”。
+3. x：不定值。
+4. z：高组态。</p>
+<h4 id="_7">整数常量<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>在Verilog HDL中，整数有二进制(<code>b</code>或<code>B</code>)、八进制(<code>o</code>或<code>O</code>)、十六进制(<code>h</code>或<code>H</code>)或十进制(<code>d</code>或<code>D</code>)四种进制表示方式，格式为
+<div class="highlight"><pre><span></span><code>&lt;位宽&gt;&#39;&lt;进制&gt;&lt;数值&gt;
+</code></pre></div>
+其中位宽对应二进制数的位数，该项可选。当位宽小于相应数值的实际位数时，相应的高位部分被忽略；当位宽大于数值的实际位数，相应的高位部分补<code>0</code>(数值的最高位为<code>0</code>或<code>1</code>)或补<code>x</code>(数值的最高位为<code>x</code>)或补<code>z</code>(数值的最高位为<code>z</code>)。
+- [!] <code>x</code>或<code>z</code>在十六进制中代表<code>4</code>位<code>x</code>(或<code>z</code>)，在八进制中代表三位<code>x</code>(或<code>z</code>)，在二进制中代表<code>1</code>位<code>x</code>(或<code>z</code>)，<code>x</code>(或<code>z</code>)不能出现在十进制中。
+- [!] 数值常量中的下划线<code>_</code>是为了增加可读性，不会影响数值大小，但不能放在数值常量的首位。</p>
+<h4 id="_8">实数常量<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<h5 id="_9">十进制计数法<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>2 . 0
+5 . 678
+0 . 1
+//小数点两侧必须有一位数字
+</code></pre></div>
+<h5 id="_10">科学计数法<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>23_5.1e2  //23510.0;下划线可忽略
+3.6E2  //360.0
+5 E-4  //0.0005
+</code></pre></div>
+<h4 id="_11">字符串常量<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>字符串常量是一行写在双引号之间的字符串序列串，若字符串用作Verilog HDL表达式或操作数，则字符串被看作8位ASCII码值的序列，即一个字符对应8位ASCII码值。例如，字符串<code>"ab"</code>等价于<code>"16'h57_58"</code>。
+字符串变量是寄存器型变量，它具有与字符串的字符数乘以8相等的位宽，如存储字符串<code>"Hello"</code>变量需要40位的寄存器。
+支持转义符<code>\n、\t、\\、\'、\%</code></p>
+<h3 id="_12">数据类型和变量<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h4 id="wire">wire型<a class="headerlink" href="#wire" title="Permanent link">&para;</a></h4>
+<p><code>wire</code>型属连线型变量，对应的是硬件电路中的物理信号连线，没有电荷保持作用。它的值始终根据驱动的变化而更新。有两种方法对它进行驱动：一是在结构描述时把它连接到门或模块的输出端；二是用持续赋值语句<code>assign</code>语句对其进行赋值。如果没有驱动源对其赋值，连接型默认值位<code>z</code>。
+<code>wire</code>型信号的定义格式如下： 
+<div class="highlight"><pre><span></span><code>wire [msb:lsb] net1, net1, ···, net N;
+</code></pre></div>
+其中，<code>msb</code> <code>lsb</code> 是用于定义连线型位宽的常量表达式；范围定义是可选的；<mark>如果没有定义范围，缺省的为1位<code>wire</code>信号。</mark>
+<div class="highlight"><pre><span></span><code>wire a, b;  //定义两个1位的wire型变量a,b
+wire [7:0] Addrbus;  //定义一个8位的wire型地址指向变量
+</code></pre></div></p>
+<h4 id="reg">reg型<a class="headerlink" href="#reg" title="Permanent link">&para;</a></h4>
+<p><code>reg</code>型属于寄存器型变量，寄存器数据对应的是具有状态保持作用的硬件电路，如==触发器、锁存器==等。若寄存器的变量未被初始化，默认值为<code>x</code>。
+与连线型之间的区别：<mark>寄存器型数据保持最后一次赋值，而连线型数据需持续驱动</mark>。
+寄存器型数据只能在<code>always</code>语句和<code>initial</code>语句中被赋值。反之，在<code>always</code>语句和<code>initial</code>语句中被赋值的每一个信号必须定义为寄存器型。
+<div class="highlight"><pre><span></span><code>reg [msb:lsb] reg1, reg2, ···;
+</code></pre></div>
+<code>msb</code>和<code>lsb</code>定义了位宽，并且均为常量值表达式。范围定义是可选的；如果没有定义范围，缺省值为1为寄存器。例如：
+<div class="highlight"><pre><span></span><code>reg [3:0] count;
+reg a,b;
+</code></pre></div>
+寄存器可以去任意长度。寄存器中的值通常被解释为无符号数，但寄存器的值可取负数，若该变量用于表达式的运算中，则按无符号数处理。</p>
+<h4 id="_13">存储型变量<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<p>存储型型变量为二位变量，由若干个相同位宽的向量构成，存储器型变量使用如下方式说明。
+<div class="highlight"><pre><span></span><code>reg [msb:lsb] mem1 [upper1:lower1], mem2 [upper2:lower2], ···
+wire [msb:lsb] mem1 [upper1:lower1], mem2 [upper2,lower2], ···
+</code></pre></div></p>
+<h3 id="_14">参数<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>用<code>parameter</code>语句来定义常量，即用<code>parameter</code>语句来定义一个标识符，代表一个常量，称为参数常量。参数经常用于定义时延和变量的宽度，来提高程序的可读性和可维护性。
+<mark>参数常量只能被赋值一次</mark>，参数说明如下：
+<div class="highlight"><pre><span></span><code>parameter counter_bits = 4;
+</code></pre></div>
+在调用子模块时可通过参数传递的方法改变子模块内的参数值。</p>
+<h3 id="_15">模块端口类型<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>input</code>输入信号端口，在模块内不能对<code>input</code>信号赋值。</li>
+<li><code>output</code>输出信号端口。</li>
+<li><code>inout</code>双向<code>I/O</code>端口</li>
+</ol>
+<h3 id="_16">运算符与优先级<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<h4 id="_17">算数运算符<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>+ - * / %
+</code></pre></div>
+<ul>
+<li>[!] 若某一操作数有不确定的值，则运算结果也是不确定的值。</li>
+<li>[!] 在进行整数除法运算时，结果值要略去小数部分，只取整数部分。</li>
+</ul>
+<h4 id="_18">关系运算符<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>&gt; &gt;= &lt; &lt;=
+</code></pre></div>
+<ul>
+<li>[!] 若某一个操作数的值为不定<code>x</code>或高阻<code>z</code>，则关系是模糊的，返回值是不定值<code>x</code>。</li>
+</ul>
+<h4 id="_19">等式运算符<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>==  (相等)
+!=  (不相等)
+===  (全等)
+!===  (非全等)
+</code></pre></div>
+<ul>
+<li>[!] 在<code>==</code>和<code>!=</code>运算中，如果任何一个操作数中的某一位为不定值<code>x</code>或高阻<code>z</code>，则结果为不定值<code>x</code>。</li>
+<li>[!] 全等运算时将不定值<code>x</code>或高阻<code>z</code>看作是逻辑状态的一种参与比较，因此，全等运算返回的结果只有<code>0</code>和<code>1</code> 两种。</li>
+</ul>
+<h4 id="_20">逻辑运算符<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>!
+&amp;&amp;
+||
+</code></pre></div>
+<ul>
+<li>[!] 同C语言</li>
+</ul>
+<h4 id="_21">按位逻辑运算符<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>~  (按位取反)
+&amp;  (按位与)
+|  (按位或)
+^  (按位异或)
+^~ , ~^  (按位同或)
+</code></pre></div>
+<h4 id="_22">缩位运算符<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>&amp;  (缩位与)
+~&amp;  (缩位与非)
+|  (缩位或)
+~|  (缩位或非)
+^  (缩位异或)
+^~ , ~^  (缩位同或)
+</code></pre></div>
+<ul>
+<li>[!] 缩位运算的运算过程是先将操作数的第一位与第二位进行与、或、非运算，然后将运算结果与第三位进行与、或、非运算，以此类推直至最后一位；最后的运算结果是一位的二进制数。</li>
+</ul>
+<h4 id="_23">位移运算符<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>A &lt;&lt; n 或 A &gt;&gt; n
+</code></pre></div>
+<h4 id="_24">条件运算符<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>? :
+</code></pre></div>
+<ul>
+<li>[!] 同C语言</li>
+</ul>
+<h4 id="_25">位拼接运算符<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>{信号1的某几位，信号2的某几位，···,信号n的某几位}
+</code></pre></div>
+<h4 id="_26">运算优先级<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h4>
+<p>![[Verilog运算符优先级.jpg]]</p>
+<h2 id="verilog-hdl">Verilog HDL的描述语句<a class="headerlink" href="#verilog-hdl" title="Permanent link">&para;</a></h2>
+<h3 id="_27">数据流描述语句<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<p>数据流描述采用持续赋值语句即<code>assign</code>语句，它用于给<code>wire</code>等<code>nets</code>型变量进行赋值。当组合电路已有表达式或逻辑电路图，适合用<code>assign</code>语句描述。
+全加器逻辑表达式如图
+$$
+\begin{cases}
+s = a \oplus b \oplus c\
+co = a · b + a · ci + b · ci
+\end{cases}
+$$
+<div class="highlight"><pre><span></span><code>module fulladder(a, b, c, ci, co);
+    input a, b, ci;
+    output s, co;
+         assign s = a ^ b ^ c;
+         assign co = (a &amp;&amp; ci) || (b &amp;&amp; ci) || (a &amp;&amp; b)
+endmodule
+</code></pre></div></p>
+<ul>
+<li>[!] 这些赋值语句是并发的，与其书写的顺序无关。只要持续赋值语句右端表达式中操作数的值变化，持续赋值语句即被执行。</li>
+</ul>
+<h3 id="_28">行为描述语句<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
+<h4 id="_29">过程结构<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h4>
+<h5 id="initialalways">initial、always语句<a class="headerlink" href="#initialalways" title="Permanent link">&para;</a></h5>
+<p>一个模块中可以==包含多个==initial和always语句。这些语句==并行执行==，语句的执行顺序==与其在模块中的顺序无关==，都在0时刻开始并行执行。initial和always语句不能嵌套使用。
+<div class="highlight"><pre><span></span><code>always语法如下
+always @(&lt;敏感信号表达式&gt;)
+begin
+    //过程赋值
+    //if语句
+    //case语句
+    //while、repeat、for语句
+    //task、function调用
+end
+</code></pre></div></p>
+<p>只要敏感信号表达式中的表达式的值发生变化，就会执行块内的语句。
+敏感信号表达式列出所有影响块内变量取值的输入信号，若有两个或两个以上敏感信号时，它们之间用<code>or</code>连接。
+<div class="highlight"><pre><span></span><code>always @(in0 or in1 or in2 or in3 or addr)
+</code></pre></div></p>
+<h5 id="beginend">串行语句块(begin···end语句组)<a class="headerlink" href="#beginend" title="Permanent link">&para;</a></h5>
+<p>用来组合需要顺序执行中的语句。</p>
+<h5 id="forkjoin">并行语句块(fork···join语句组)<a class="headerlink" href="#forkjoin" title="Permanent link">&para;</a></h5>
+<p>用来组合需要并行执行中的语句。</p>
+<p>initial过程赋值语句只执行一次，即在0时刻开始执行。
+<div class="highlight"><pre><span></span><code>initial
+    begin
+     语句1；
+     语句2；
+     ···
+    end
+</code></pre></div></p>
+<h4 id="_30">过程赋值语句<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h4>
+<h5 id="_31">阻塞性过程赋值 “=”<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h5>
+<p>表达式右端可以是任何表达式。在该语句结束时执行赋值，前面的语句没有完成前，后面的语句无法执行。顺序执行。</p>
+<h5 id="_32">非阻塞性过程赋值 “&lt;=”<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h5>
+<p>一条非阻塞赋值语句的执行是不会阻塞下一条语句的执行。在本条语句执行完毕前，下一条语句开始执行。</p>
+<h4 id="_33">条件分支语句<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code>if(&lt;条件表达式1&gt;)语句或语句块1；
+    else if(&lt;条件表达式2&gt;)语句或语句块2；
+    ......
+    else if(&lt;条件表达式n&gt;)语句或语句块n；
+    else语句或语句块n+1；
+</code></pre></div>
+条件表达式一般为逻辑表达式、关系表达式或1位逻辑变量。<mark>若为0、不定值x、高阻z，作假处理；若为1，则为真。</mark></p>
+<div class="highlight"><pre><span></span><code>case(&lt;控制表达式&gt;)
+    值1：语句或语句块1；
+    值2：语句或语句块2；
+    ...
+    值n：语句或语句块n；
+    default：语句或语句块n+1；
+endcase
+</code></pre></div>
+<h4 id="_34">循环控制语句<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>for(循环变量赋初值；循环结束条件；循环变量增值)循环体语句或语句块；
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>n行串行加法器
+module fulladder_n(a, b, s, ci, co);
+parameter n = 4;
+input [n-1:0] a;
+input [n-1:0] b;
+output [n-1:0] s;
+input ci;
+output co;
+wire co;  //默认为一位的变量
+integer i;
+reg [n-1:0] s;
+reg [n:0] c;
+assign co = c[n];
+always @(*)
+begin
+    c[0] = ci;
+    for(i = 0; i &lt;= n - 1; i = i + 1);
+        begin
+            s[i] = a[i] ^ b[i] ^ c[i];
+            c[i + 1] = a[i] &amp;&amp; b[i] || a[i] &amp;&amp; c[i] || b[i]&amp;&amp;c[i];
+        end
+end
+endmodule   
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>repeat(&lt;循环次数表达式&gt;)语句或语句块；
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>用repeat语句产生四变量组合电路的激励波形
+initial
+begin
+    {a, b, c, d} = 0;
+    repeat(16)begin #100 {a, b, c, d} = {a, b, c, d} + 1; end
+    #100 $stop
+end
+</code></pre></div>
+<h3 id="verilog_2">Verilog描述风格及层次化设计<a class="headerlink" href="#verilog_2" title="Permanent link">&para;</a></h3>
+<h4 id="_35">数据流型描述<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h4>
+<h4 id="xing">行为xing<a class="headerlink" href="#xing" title="Permanent link">&para;</a></h4>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 15, 2025 14:47:51">March 15, 2025</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 15, 2025 14:47:51">March 15, 2025</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Veirlog">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Veirlog
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Linger
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+    
+  
+
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
