@@ -7,6 +7,9 @@ nav:
   - Physics:
     - Physics/index.md
     - Physics/大学物理笔记.md
+  - Verilog:
+    - Verilog/index.md
+    - Verilog/Verilog HDL.md
 
 site_url: https://mydomain.org/mysite
 # [UI]
